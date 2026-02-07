@@ -2,95 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+/* Lovely Collections Enterprises Design System
+   Premium, sophisticated, elegant sneaker store
+   Warm terracotta/copper tones with dark accents
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand colors - Warm terracotta/copper palette */
+    --background: 30 20% 98%;
+    --foreground: 20 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 30 15% 99%;
+    --card-foreground: 20 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 30 15% 99%;
+    --popover-foreground: 20 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Warm terracotta/copper */
+    --primary: 18 60% 55%;
+    --primary-foreground: 30 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm cream */
+    --secondary: 30 25% 94%;
+    --secondary-foreground: 20 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft warm gray */
+    --muted: 25 15% 92%;
+    --muted-foreground: 20 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Deep copper/bronze */
+    --accent: 25 50% 45%;
+    --accent-foreground: 30 20% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 30 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 145 50% 40%;
+    --success-foreground: 30 20% 98%;
+
+    /* Borders and inputs */
+    --border: 25 20% 88%;
+    --input: 25 20% 88%;
+    --ring: 18 60% 55%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom semantic tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(20 15% 15%) 0%, hsl(25 20% 25%) 100%);
+    --hero-overlay: linear-gradient(to right, hsl(20 15% 10% / 0.8) 0%, hsl(20 15% 10% / 0.4) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(20 15% 15% / 0.1);
+    --card-shadow-hover: 0 12px 40px -8px hsl(20 15% 15% / 0.15);
+    --gold-accent: 38 70% 55%;
+    --copper-dark: 18 50% 35%;
+    --cream-light: 35 30% 96%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 30 20% 97%;
+    --sidebar-foreground: 20 15% 25%;
+    --sidebar-primary: 18 60% 55%;
+    --sidebar-primary-foreground: 30 20% 98%;
+    --sidebar-accent: 25 25% 92%;
+    --sidebar-accent-foreground: 20 15% 20%;
+    --sidebar-border: 25 20% 88%;
+    --sidebar-ring: 18 60% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 15% 8%;
+    --foreground: 30 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 15% 10%;
+    --card-foreground: 30 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 15% 10%;
+    --popover-foreground: 30 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 18 55% 60%;
+    --primary-foreground: 20 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 20 15% 15%;
+    --secondary-foreground: 30 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 15% 18%;
+    --muted-foreground: 25 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 45% 50%;
+    --accent-foreground: 30 20% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 30 20% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 20 15% 18%;
+    --input: 20 15% 18%;
+    --ring: 18 55% 60%;
+
+    --sidebar-background: 20 15% 10%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 18 55% 60%;
+    --sidebar-primary-foreground: 20 15% 8%;
+    --sidebar-accent: 20 15% 15%;
+    --sidebar-accent-foreground: 30 20% 90%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 18 55% 60%;
   }
 }
 
@@ -99,7 +123,162 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-section {
+    @apply relative overflow-hidden;
+    background: var(--hero-gradient);
+  }
+
+  .hero-overlay {
+    background: var(--hero-overlay);
+  }
+
+  /* Premium card styling */
+  .product-card {
+    @apply relative overflow-hidden bg-card rounded-lg transition-all duration-300;
+    box-shadow: var(--card-shadow);
+  }
+
+  .product-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    @apply -translate-y-1;
+  }
+
+  /* Badge styling */
+  .badge-new {
+    @apply bg-primary text-primary-foreground px-3 py-1 text-xs font-medium uppercase tracking-wider;
+  }
+
+  .badge-bestseller {
+    @apply px-3 py-1 text-xs font-medium uppercase tracking-wider;
+    background-color: hsl(var(--gold-accent));
+    color: hsl(20 15% 10%);
+  }
+
+  .badge-sale {
+    @apply bg-destructive text-destructive-foreground px-3 py-1 text-xs font-medium uppercase tracking-wider;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground font-medium transition-all duration-200 hover:opacity-90;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-foreground text-foreground font-medium transition-all duration-200 hover:bg-foreground hover:text-background;
+  }
+
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide uppercase text-sm transition-all duration-300;
+    background-color: hsl(var(--cream-light));
+    color: hsl(20 15% 15%);
+  }
+
+  .btn-hero:hover {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Section styling */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-center mb-4;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-center text-lg max-w-2xl mx-auto mb-12;
+  }
+
+  /* Input styling */
+  .input-elegant {
+    @apply w-full px-4 py-3 border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200;
+  }
+
+  /* Footer styling */
+  .footer-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  /* Price styling */
+  .price-tag {
+    @apply text-xl font-semibold;
+    color: hsl(var(--copper-dark));
+  }
+
+  .price-original {
+    @apply text-muted-foreground line-through text-sm;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-200 py-2;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    content: '';
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Category cards */
+  .category-card {
+    @apply relative overflow-hidden group cursor-pointer;
+  }
+
+  .category-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-300;
+  }
+
+  .category-card:hover .category-card-overlay {
+    @apply from-black/80 via-black/30;
+  }
+
+  /* Feature icons */
+  .feature-icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-secondary text-primary;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
